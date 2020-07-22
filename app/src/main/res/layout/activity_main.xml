@@ -8,86 +8,58 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:isScrollContainer="false"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="183dp">
         <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="150dp"
+            android:id="@+id/main_layout"
+            android:layout_width="199dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:orientation="vertical"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_gravity="top"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="78dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.204">
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/width"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
                 android:hint="Width"
-                />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
                 android:hint="Height"
-                />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/items"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Items" />
+                android:hint="Items"
+                android:inputType="textPersonName" />
 
-
-            <TableLayout
+            <Button
+                android:id="@+id/set_button"
                 android:layout_width="match_parent"
-                android:layout_height="208dp">
-
-                <TableRow
-                    android:id="@+id/row1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp">
-
-                    <EditText
-                        android:id="@+id/text1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <EditText
-                        android:id="@+id/text2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <EditText
-                        android:id="@+id/text3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <EditText
-                        android:id="@+id/text4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-
-                </TableRow>
-
-
-            </TableLayout>
+                android:layout_height="wrap_content"
+                android:text="Set" />
 
 
         </LinearLayout>
 
 
     </ScrollView>
+
 
 
 
