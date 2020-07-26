@@ -24,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
         //main.xml内のLinerLayout
         final LinearLayout layout1 = findViewById(R.id.main_layout);
+        final Button set2Bt = new Button(this);
+        final EditText custm = new EditText(this);
+        final HashMap<Integer, EditText> itemsInfo = new HashMap<>();
+        final HashMap<Integer, EditText> customsInfo = new HashMap<>();
+        final
+        set2Bt.setText("set customer");
+        set2Bt.setText("set customer");
+        custm.setHint("customers");
         EditText width = findViewById(R.id.width);
         EditText height = findViewById(R.id.height);
 
@@ -43,10 +51,21 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         EditText itemsAm = findViewById(R.id.items);
                         final int items_size = Integer.parseInt(itemsAm.getText().toString());
-                        layout1.addView(makeCells(items_size, layout1));
+                        layout1.addView(makeCells(items_size, 4));
+                        layout1.addView(custm);
+                        layout1.addView(set2Bt);
+
                     }
                 }
         );
+
+        set2Bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final int customerAm = Integer.parseInt(custm.getText().toString());
+                layout1.addView(makeCells(customerAm, 2));
+            }
+        });
 
         layout1.setBackgroundColor(0xffddffee);
 
@@ -54,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public TableLayout makeCells(int item_size, LinearLayout layout) {
+    public TableLayout makeCells(int item_size, int columns) {
 
         //tablelayoutについての縦横の設定
         TableLayout.LayoutParams params = new TableLayout.LayoutParams(
@@ -73,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < item_size; i++) {
             TableRow row = new TableRow(this);
-            for (int j = 0; j < 4; j++) {
+            for (int j = 0; j < columns; j++) {
                 EditText text = new EditText(this);
                 texts.put(c,text);
                 row.addView(text);
@@ -88,4 +107,7 @@ public class MainActivity extends AppCompatActivity {
         return table;
 
     }
+
+
+
 }
