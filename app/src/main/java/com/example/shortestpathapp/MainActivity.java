@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         final EditText custm = new EditText(this);
         final HashMap<Integer, EditText> itemsInfo = new HashMap<>();
         final HashMap<Integer, EditText> customsInfo = new HashMap<>();
-        final
         set2Bt.setText("set customer");
         set2Bt.setText("set customer");
         custm.setHint("customers");
